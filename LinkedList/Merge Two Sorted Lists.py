@@ -10,47 +10,7 @@ The merged list should be :
 #	def __init__(self, x):
 #		self.val = x
 #		self.next = None
-
-class Solution:
-	# @param A : head node of linked list
-	# @param B : head node of linked list
-	# @return the head node in the linked list
-	def mergeTwoLists(self, A, B):
-	   
-        Head = None
-        C = None
-        
-        if (A.val < B.val):
-            Head = A
-            C = A
-            A = A.next
-        else:
-            Head = B
-            C = B
-            B = B.next
-        
-        while(A is not None and B is not None):
-	       
-            if (A.val < B.val):
-                C.next = A
-                C = A
-                A = A.next
-            else:
-                C.next = B
-                C = B
-                B = B.next
-                
-        while(A is not None):
-            C.next = A
-            C = A
-            A = A.next
-        while(B is not None):
-            C.next = B
-            C = B
-            B = B.next
-            
-	       
-        return Head# Definition for singly-linked list.
+# Definition for singly-linked list.
 # class ListNode:
 #	def __init__(self, x):
 #		self.val = x
@@ -74,7 +34,7 @@ class Solution:
             C = B
             B = B.next
         
-        while(A is not None and B is not None):
+        while(A and B):
 	       
             if (A.val < B.val):
                 C.next = A
@@ -85,14 +45,10 @@ class Solution:
                 C = B
                 B = B.next
                 
-        while(A is not None):
+        if A:
             C.next = A
-            C = A
-            A = A.next
-        while(B is not None):
+        else:
             C.next = B
-            C = B
-            B = B.next
             
 	       
-        return Head
+        return Head# Definition for singly-linked list.
